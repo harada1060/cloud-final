@@ -19,7 +19,7 @@ function Timeline() {
         verfide={true}
         text="初めてのツイート"
         avater="http://shincode.info/wp-content/uploads/2021/12/icon.png"
-        image=""
+        image="https://source.unsplash.com/random"
       />
     </div>
   );
