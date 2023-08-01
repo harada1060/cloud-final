@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
+import db from "../../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 function Timeline() {
+  const [posts, setPost] = useState([]);
+
+  const postData = collection(db, "posts");
+  getDocs(postData).then((querySnapshot) => {
+    setPost(querySnapshot.docs.map((doc) => doc.data()));
+  });
+
+  useEffect(() => {
+    const postData = collection(db, "posts");
+    getDocs(postData).then((querySnapshot) => {
+      setPost(querySnapshot.docs.map((doc) => doc.data()));
+    });
+    console.log("mount");
+  }, []);
+
   return (
     <div className="timeline">
       {/* header */}
@@ -13,14 +30,17 @@ function Timeline() {
       {/* tweetbox */}
       <TweetBox />
       {/* post */}
-      <Post
-        displayName="プログラミングチュートリアル"
-        username="Shin_Engineer"
-        verfide={true}
-        text="初めてのツイート"
-        avater="http://shincode.info/wp-content/uploads/2021/12/icon.png"
-        image="https://source.unsplash.com/random"
-      />
+      {posts.map((post) => (
+        <Post
+          key={post.text}
+          displayName={post.displayName}
+          username={post.username}
+          verfide={post.verfide}
+          text={post.text}
+          avatar={post.avatar}
+          image={post.image}
+        />
+      ))}
     </div>
   );
 }
