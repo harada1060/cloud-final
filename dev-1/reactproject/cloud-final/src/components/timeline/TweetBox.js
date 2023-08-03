@@ -17,7 +17,7 @@ function TweetBox() {
       username: "Cloud-Final",
       verfide: true,
       text: tweetMessage,
-      avatar: "http://shincode.info/wp-content/uploads/2021/12/icon.png",
+      avatar: "https://lh3.googleusercontent.com/pw/AIL4fc8EW1iHxMksKsQUm8CvVedjgk2W7AqhnkZM6gndet-Pfpazue0OnJsTrjyQFI51s_TH3iI4p1RjWOaVK_YF2lMPN_DGPk4sRmdCKzsnFm5FaJ-BuHNPrnMbMah5MLWovVmN_BRwGmlrmgWl4uSAQGb0=w600-h600-s-no?authuser=1",
       image: tweetImage,
       timestamp: serverTimestamp(),
     })

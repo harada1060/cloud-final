@@ -3,22 +3,24 @@ import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, orderBy, query } from "firebase/firestore";
+import FlipMove from "react-flip-move";
 
 function Timeline() {
   const [posts, setPost] = useState([]);
 
-  const postData = collection(db, "posts");
-  getDocs(postData).then((querySnapshot) => {
-    setPost(querySnapshot.docs.map((doc) => doc.data()));
-  });
 
   useEffect(() => {
     const postData = collection(db, "posts");
-    getDocs(postData).then((querySnapshot) => {
+    const q = query(postData, orderBy("timestamp","desc"));
+    //getDocs(q).then((querySnapshot) => {
+    //  setPost(querySnapshot.docs.map((doc) => doc.data()));
+    //});
+    /*リアルタイムでデータを取得*/
+
+    onSnapshot(q, (querySnapshot) => {
       setPost(querySnapshot.docs.map((doc) => doc.data()));
     });
-    console.log("mount");
   }, []);
 
   return (
@@ -30,6 +32,7 @@ function Timeline() {
       {/* tweetbox */}
       <TweetBox />
       {/* post */}
+      <FlipMove >
       {posts.map((post) => (
         <Post
           key={post.text}
@@ -41,6 +44,7 @@ function Timeline() {
           image={post.image}
         />
       ))}
+      </FlipMove>
     </div>
   );
 }

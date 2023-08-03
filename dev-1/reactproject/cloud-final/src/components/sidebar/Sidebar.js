@@ -19,8 +19,8 @@ function sidebar() {
 
 
         {/*sidebar option */}
-        <SidebarOption text="ホーム" Icon={HomeIcon}/>
-        <SidebarOption text="検索" Icon={SearchIcon}/>
+        <SidebarOption text="ホーム" Icon={HomeIcon} active/>
+        <SidebarOption text="検索" Icon={SearchIcon} />
         <SidebarOption text="通知" Icon={NotificationsActiveIcon}/>
         <SidebarOption text="メッセージ" Icon={ChatBubbleIcon}/>
         <SidebarOption text="ブックマーク" Icon={BookmarksIcon}/>
