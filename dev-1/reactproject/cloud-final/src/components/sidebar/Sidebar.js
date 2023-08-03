@@ -11,6 +11,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Button } from '@mui/material';
 import "./Sidebar.css";
+import sendTweet from "../timeline/TweetBox"
 function sidebar() {
   return (
     <div className='sidebar'>
@@ -34,7 +35,7 @@ function sidebar() {
         {/*sidebar option */}
 
         {/*　投稿ボタン */}
-        <Button variant="outlined" className='sidebar__tweet' fullWidth>投稿する</Button>
+        <Button variant="outlined" className='sidebar__tweet'fullWidth>投稿する</Button>
 
       
     </div>

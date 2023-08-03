@@ -1,11 +1,5 @@
-import React from 'react'
+const SignUp = () => {
+    return <h1>ユーザー登録</h1>
+};
 
-function Signu() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Signu
+export default SignUp;

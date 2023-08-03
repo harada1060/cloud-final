@@ -1,5 +1,6 @@
 import { Avatar } from "@mui/material";
-import React, { forwardRef } from "react";
+import React, { forwardRef} from "react";
+
 import {
   ChatBubbleOutline,
   FavoriteBorder,
@@ -8,6 +9,7 @@ import {
   VerifiedUser,
 } from "@mui/icons-material";
 import "./Post.css";
+
 
 
 const Post = forwardRef(({ displayName, username, verified, text, image, avatar}, ref) => {
@@ -31,12 +33,13 @@ const Post = forwardRef(({ displayName, username, verified, text, image, avatar}
             <p>{text}</p>
           </div>
         </div>
-        <img src={image} />
+        <img src={image}/>
         <div className="post--footer">
           <ChatBubbleOutline fontSize="small" />
           <Repeat fontSize="small" />
           <FavoriteBorder fontSize="small" />
           <PublishOutlined fontSize="small" />
+          
         </div>
       </div>
     </div>
