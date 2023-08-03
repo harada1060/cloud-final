@@ -15,9 +15,9 @@ function Widgets() {
             <h2>今どうしてる？</h2>
 
             {/*ライブラリーを追加・追記*/}
+            <TwitterTimelineEmbed source="profile" screenName='kaishi_pu' options={{height:600}}/>
             <TwitterTweetEmbed  tweetId={'1680898320003403776'}/>
-
-            <TwitterTimelineEmbed source="profile" screenName='kaishi_pu' options={{height:400}}/>
+            
             <TwitterShareButton url='https://twitter.com/kaishi_pu' options={{ text:"クラウド最終課題", via:"kaishi_pu" }}/>
         </div>
       
