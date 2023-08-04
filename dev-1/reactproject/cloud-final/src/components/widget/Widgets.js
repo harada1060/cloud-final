@@ -1,6 +1,6 @@
 import { Search } from '@mui/icons-material'
 import React from 'react'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterTweetEmbed, TwitterFollowButton} from 'react-twitter-embed';
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterTweetEmbed, TwitterFollowButton, TwitterDMButton} from 'react-twitter-embed';
 import "./Widgets.css"
 
 function Widgets() {
@@ -15,10 +15,12 @@ function Widgets() {
             <h2>今どうしてる？</h2>
 
             {/*ライブラリーを追加・追記*/}
-            <TwitterTimelineEmbed source="profile" screenName='kaishi_pu' options={{height:600}}/>
+            <TwitterTimelineEmbed source="profile" screenName='kaishi_pu' options={{height:500}}/>
             <TwitterTweetEmbed  tweetId={'1680898320003403776'}/>
             <TwitterFollowButton />
             <TwitterShareButton url='https://twitter.com/kaishi_pu' options={{ text:"クラウド最終課題", via:"kaishi_pu" }}/>
+            <TwitterFollowButton screenName={'kaishi_pu'}/>
+            <TwitterDMButton id={'1680898320003403776'}/>
         </div>
       
     </div>
